@@ -1,1 +1,8 @@
-{%  include 'navbar.html' %}
+{% extends 'navbar.html' %}
+{% block login %}
+<form class="form-inline my-2 my-lg-0">
+    <span class="navbar-text" style="padding-right: 10px;">You are not logged in! </span>
+    <a class="btn btn-primary my-2 my-sm-0" href="{% url 'login' %}">Log In</a>
+    <a href="{% url 'finewell:signup' %}" class="btn btn-outline-info my-2 my-sm-0"> SignUp</a>
+</form>
+{% endblock %}

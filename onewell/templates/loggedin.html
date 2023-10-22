@@ -1,0 +1,7 @@
+{% extends 'navbar.html' %}
+{% block login %}
+<form class="form-inline my-2 my-lg-0">
+    <span class="navbar-text" style="padding-right: 10px;"> Logged in as {{ user.username }}!</span>
+    <a class="btn btn-primary my-2 my-sm-0" href="{% url 'logout' %}">Log out</a>
+</form>
+{% endblock %}

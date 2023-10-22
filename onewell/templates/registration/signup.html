@@ -11,10 +11,18 @@
     <div class="p-2">
       <h2 style="font-family:  Manrope;"> SignUp</h2>
     </div>
-    <div class="card" style="width: 25rem; height: 25rem; display: flex; justify-content: center;">
+    <div class="card" style="width: 27rem; height: 30rem; display: flex; justify-content: center;">
       <div class="p-5" style=" display: flex; align-items: center; justify-content: center; height: 25rem;">
-      <form method="post">
-        {% csrf_token %}  
+        <form method="post">
+          {% csrf_token %}  
+          {{ form.first_name.label_tag }}
+          <div class="p-2">
+            {{ form.first_name }}
+          </div>
+          {{ form.last_name.label_tag}}
+          <div class="p-2">
+            {{ form.last_name }}
+          </div>
         {{ form.username.label_tag}}
             <div class="p-2">
               {{ form.username }}
@@ -36,9 +44,11 @@
       </div>
       <div style="color: red ;">
         {{ form.username.errors }}
-        
+        {{ form.password1.errors}}
+        {{ form.password2.errors}}
       </div>
-
-  </div>
+      <div></div>
+    </div>
+    <div style="height: 50rem;"></div>
 </div>
 {% endblock %}
